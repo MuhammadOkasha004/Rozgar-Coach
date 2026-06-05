@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #84cc16;
+  --primary-dark: #65a30d;
+  --primary-light: #d9f99d;
+  --accent: #4ade80;
+  --bg-main: #ffffff;
+  --bg-surface: #f7fee7;
+  --bg-dark: #1a2e05;
+  --text-primary: #14532d;
+  --text-secondary: #4d7c0f;
+  --text-muted: #6b7280;
+  --border: #d9f99d;
+}
+
+.dark {
+  --bg-main: #030712;
+  --bg-surface: #111827;
+  --bg-dark: #020617;
+  --text-primary: #ecfccb;
+  --text-secondary: #bef264;
+  --text-muted: #9ca3af;
+  --border: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-lime-500 hover:bg-lime-400 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-lime-500/30 hover:shadow-lime-500/50 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white border-2 border-lime-500 text-lime-700 hover:bg-lime-50 font-bold px-6 py-3 rounded-xl transition-all hover:-translate-y-0.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-lime-400;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-darkgreen hover:bg-darkgreen-light text-lime-100 font-bold px-6 py-3 rounded-xl transition-all dark:bg-gray-950 dark:hover:bg-gray-900;
+  }
+
+  .card {
+    @apply bg-white border border-lime-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-lime-400 transition-all dark:bg-gray-900 dark:border-gray-700 dark:hover:border-lime-600;
+  }
+
+  .card-static {
+    @apply bg-white border border-lime-200 rounded-2xl p-6 shadow-sm dark:bg-gray-900 dark:border-gray-700;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-lime-200 rounded-xl focus:border-lime-500 focus:outline-none focus:ring-2 focus:ring-lime-200 transition-all bg-white text-darkgreen placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-600 dark:text-lime-100 dark:placeholder:text-gray-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-lime {
+    @apply badge bg-lime-100 text-lime-700 border border-lime-300 dark:bg-gray-800 dark:text-lime-400 dark:border-gray-600;
+  }
+
+  .badge-orange {
+    @apply badge bg-orange-100 text-orange-700 border border-orange-300 dark:bg-gray-800 dark:text-orange-400 dark:border-gray-600;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-700 border border-green-300 dark:bg-gray-800 dark:text-green-400 dark:border-gray-600;
+  }
+}
+
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(132, 204, 22, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 204, 22, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: #111827;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f7fee7;
+}
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #4d7c0f;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #84cc16;
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #65a30d;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+.stagger-6 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
