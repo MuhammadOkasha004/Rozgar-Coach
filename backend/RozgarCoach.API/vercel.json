@@ -1,0 +1,7 @@
+{
+  "framework": "dotnet",
+  "buildCommand": "dotnet publish -c Release -o dist",
+  "outputDirectory": "dist",
+  "installCommand": "",
+  "devCommand": "dotnet run"
+}
