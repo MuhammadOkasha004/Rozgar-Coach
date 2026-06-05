@@ -19,8 +19,8 @@ public class OpenRouterService : IOpenRouterService
     public OpenRouterService(HttpClient httpClient, IConfiguration config, ILogger<OpenRouterService> logger)
     {
         _httpClient = httpClient;
-        _apiKey = config["OpenRouter:ApiKey"]
-            ?? throw new InvalidOperationException("OpenRouter:ApiKey not configured");
+        _apiKey = config["OPENROUTER_API_KEY"]
+            ?? throw new InvalidOperationException("OPENROUTER_API_KEY not configured");
         _baseUrl = config["OpenRouter:BaseUrl"] ?? "https://openrouter.ai/api/v1";
         _model = config["OpenRouter:Model"] ?? "anthropic/claude-3.5-sonnet";
         _siteUrl = config["OpenRouter:SiteUrl"];
