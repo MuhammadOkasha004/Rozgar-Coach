@@ -10,7 +10,6 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-// 👇 Niche saare routes mein "Interview" ka "I" capital kar diya hai 👇
 export const getNextQuestion = async (data: QuestionRequest): Promise<string> => {
   const response = await api.post<{ question: string }>('/Interview/question', data);
   return response.data.question;
