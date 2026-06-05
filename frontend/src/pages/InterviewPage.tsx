@@ -5,7 +5,7 @@ import ProgressBar from '../components/ProgressBar';
 import LoadingSpinner from '../components/LoadingSpinner';
 import WeakPointsCard from '../components/WeakPointsCard';
 import { useInterviewStore } from '../store/interviewStore';
-import { getQuestionsBank } from '../services/api';
+import { BASE_URL, getQuestionsBank } from '../services/api';
 import { buildWeakPoints } from '../services/weakPoints';
 
 export default function InterviewPage() {
@@ -102,7 +102,7 @@ export default function InterviewPage() {
           <h2 className="text-xl font-bold text-darkgreen dark:text-lime-100 mb-2">Error</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{error}</p>
           <p className="text-xs text-red-600 mb-6">
-            Make sure backend is running at http://localhost:5000 and the API key is configured.
+            Make sure backend is running at {BASE_URL.replace('/api', '')} and the API key is configured.
           </p>
           <div className="flex gap-3 justify-center">
             <button onClick={fetchMCQs} className="btn-primary">Try Again</button>
