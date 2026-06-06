@@ -1,8 +1,8 @@
 import axios from 'axios';
 import type { QuestionRequest, AnswerRequest, FeedbackResponse, QuestionsBankRequest, MCQSet } from './types';
 
-// Humne direct live URL set kar diya hai aur localhost fallback rakha hai
-export const BASE_URL = 'https://okasha25-001-site1.site4future.com/api';
+
+export const BASE_URL = 'https://okasha25:okasha123@okasha25-001-site1.site4future.com/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
